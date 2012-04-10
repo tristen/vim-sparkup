@@ -1,0 +1,100 @@
+*sparkup.txt*  Write fast CSS and HTML using sparkup language
+
+Author:  Rico Sta. Cruz <http://ricostacruz.com>
+
+INTRODUCTION                                        *sparkup-introduction* *sparkup*
+
+Sparkup lets you write HTML code faster. Don't believe us? See it in action!
+
+You can write HTML in a CSS-like syntax, and have Sparkup handle the expansion to full
+HTML code. It is meant to help you write long HTML blocks in your text editor by 
+letting you type less characters than needed.
+
+Sparkup is written in Python, and requires Python 2.5 or newer (2.5 is preinstalled
+in Mac OS X Leopard). Sparkup also offers intregration into common text editors. 
+Support for VIM and TextMate are currently included.
+
+A short screencast is available here: http://www.youtube.com/watch?v=Jw3jipcenKc
+
+GENERAL COMMANDS                                    *sparkup-usage*
+
+g:sparkup (Default: 'sparkup')                      Location of the sparkup executable.
+                                                    You shouldn't need to change this
+                                                    setting if you used the install
+                                                    option above.
+
+g:sparkupArgs (Default: '--no-last-newline')        Additional args passed to sparkup.
+
+g:sparkupExecuteMapping (Default: '<c-e>')          Mapping used to execute sparkup.
+
+g:sparkupNextMapping (Default: '<c-n>')             Mapping used to jump to the next
+                                                    empty tag/attribute.
+
+
+EXAMPLES                                            *sparkup-examples*
+
+`div`                               =   `<div></div>`
+
+`div#header`                        =   `<div id="header"></div>`
+
+`div.align-left#header`             =   `<div id="header" class="align-left"></div>`
+
+`div#header + div#footer`           =   `<div id="header"></div>`
+                                        ` <div id="footer"></div>`
+
+`#menu > ul`                        =  `<div id="menu">`
+                                          `<ul></ul>`
+                                        `</div>`
+
+`#menu > h3 + ul`                   =   `<div id="menu">`
+                                            `<h3></h3>`
+                                            `<ul></ul>`
+                                          `</div>`
+
+`#header > h1{Welcome to our site}` =   `<div id="header">`
+                                          `<h1>Welcome to our site</h1>`
+                                        `</div>`
+
+`a[href=index.html]{Home}`          =   `<a href="index.html">Home</a>`
+
+`ul > li*3`                         =   `<ul>`
+                                          `<li></li>`
+                                          `<li></li>`
+                                          `<li></li>`
+                                        `</ul>`
+
+`ul > li.item-$*3`                  =   `<ul>`
+                                          `<li class="item-1"></li>`
+                                          `<li class="item-2"></li>`
+                                          `<li class="item-3"></li>`
+                                        `</ul>`
+
+`ul > li.item-$*3 > strong`         =   `<ul>`
+                                          `<li class="item-1"><strong></strong></li>`
+                                          `<li class="item-2"><strong></strong></li>`
+                                          `<li class="item-3"><strong></strong></li>`
+                                        `</ul>`
+
+`table > tr*2 > td.name + td*3`     =   `<table>`
+                                          `<tr>`
+                                            `<td class="name"></td>`
+                                            `<td></td>`
+                                            `<td></td>`
+                                            `<td></td>`
+                                          `</tr>`
+                                          `<tr>`
+                                            `<td class="name"></td>`
+                                            `<td></td>`
+                                            `<td></td>`
+                                            `<td></td>`
+                                            `</tr>`
+                                          `</table>`
+
+`#header > ul > li < p{Footer}`     =   `<div id="header">`
+                                          `<ul>`
+                                            `<li></li>`
+                                          `</ul>`
+                                          `<p>Footer</p>`
+                                        `</div>`
+
+ vim:tw=78:et:ft=help:norl:
