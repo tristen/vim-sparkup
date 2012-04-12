@@ -4,7 +4,7 @@ Just the vim version of [Sparkup](https://github.com/rstacruz/sparkup) tailored 
 
 Installation
 ------------
-Like @tpope says:
+Like [@tpope](http://github.com/tpope) says:
 
 If you don't have a preferred installation method, I recommend
 installing [pathogen.vim](https://github.com/tpope/vim-pathogen), and
@@ -14,7 +14,7 @@ then simply copy and paste:
     git clone git://github.com/tristen/vim-sparkup.git
 
 Once help tags have been generated, you can view the manual with
-`:help afterimage`.
+`:help sparkup`.
 
 Credit
 ------------
