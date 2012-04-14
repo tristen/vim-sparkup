@@ -1,3 +1,20 @@
+if !exists('g:sparkupExecuteMapping')
+  let g:sparkupExecuteMapping = '<c-e>'
+endif
+
+if !exists('g:sparkupNextMapping')
+  let g:sparkupNextMapping = '<c-n>'
+endif
+
+exec 'nnoremap <buffer> ' . g:sparkupExecuteMapping . ' :call <SID>Sparkup()<cr>'
+exec 'inoremap <buffer> ' . g:sparkupExecuteMapping . ' <c-g>u<Esc>:call <SID>Sparkup()<cr>'
+exec 'nnoremap <buffer> ' . g:sparkupNextMapping . ' :call <SID>SparkupNext()<cr>'
+exec 'inoremap <buffer> ' . g:sparkupNextMapping . ' <c-g>u<Esc>:call <SID>SparkupNext()<cr>'
+
+if exists('*s:Sparkup')
+    finish
+endif
+
 function! s:Sparkup()
     if !exists('s:sparkup')
         let s:sparkup = exists('g:sparkup') ? g:sparkup : 'sparkup'
