@@ -29,6 +29,10 @@ g:sparkupExecuteMapping (Default: '<c-e>')          Mapping to execute sparkup
 g:sparkupNextMapping (Default: '<c-n>')             Mapping to jump to the
                                                     next empty tag/attribute.
 
+g:sparkupMappingInsertModeOnly (Default: '0')       Mappping are only presents
+                                                    in insert mode if set to
+                                                    '1'.
+
 ==============================================================================
 EXAMPLES                                                    *sparkup-examples*
 
