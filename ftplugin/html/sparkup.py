@@ -649,7 +649,10 @@ class Element:
 
         output = "%s" % (self.name)
         for key, value in self.attributes.iteritems():
-            output += " %s='%s'" % (key, value)
+            if self.parser.options.has("double-quote"):
+                output += " %s=\"%s\"" % (key, value)
+            else:
+                output += " %s='%s'" % (key, value)
         return output
 
     def get_opening_tag(self):
@@ -1072,6 +1075,7 @@ class Options:
         ("", "indent-spaces=", "Indent spaces"),
         ("", "expand-divs", "Automatically expand divs"),
         ("", "no-last-newline", "Skip the trailing newline"),
+        ("", "double-quote", "Use double quotes instead of single inside html tags"),
         ("", "start-guide-format=", "To be documented"),
         ("", "end-guide-format=", "To be documented"),
     ]

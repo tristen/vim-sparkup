@@ -21,7 +21,8 @@ endif
 function! s:Sparkup()
     if !exists('s:sparkup')
         let s:sparkup = exists('g:sparkup') ? g:sparkup : 'sparkup'
-        let s:sparkupArgs = exists('g:sparkupArgs') ? g:sparkupArgs : '--no-last-newline'
+        let s:sparkupDoubleQuote = exists('g:sparkupDoubleQuote') ? g:sparkupDoubleQuote : 0
+        let s:sparkupArgs = exists('g:sparkupArgs') ? g:sparkupArgs : '--no-last-newline' . (s:sparkupDoubleQuote ? ' --double-quote' : '')
         " check the user's path first. if not found then search relative to
         " sparkup.vim in the runtimepath.
         if !executable(s:sparkup)
