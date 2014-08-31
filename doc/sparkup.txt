@@ -32,6 +32,9 @@ g:sparkupNextMapping (Default: '<c-n>')             Mapping to jump to the
 g:sparkupMappingInsertModeOnly (Default: '0')       Disable mapping in normal
                                                     mode if set to '1'.
 
+g:sparkupDoubleQuote (Default: '0')                 Set to '1' to use double
+                                                    quotes around attributes.
+
 ==============================================================================
 EXAMPLES                                                    *sparkup-examples*
 
